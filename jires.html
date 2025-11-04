@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jires S.R.L - Soluciones para tu Hogar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00aaff;
+            --secondary-color: #aa00ff;
+            --background-color: #0a0a1a;
+            --surface-color: rgba(255, 255, 255, 0.05);
+            --text-color: #e0e0e0;
+            --text-secondary-color: #a0a0a0;
+            --glow-color: rgba(0, 170, 255, 0.5);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        /* Estilos del encabezado */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0.5rem;
+            background: rgba(10, 10, 30, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--surface-color);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo-img {
+            height: 50px;
+            width: auto;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+
+        .company-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--text-color);
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 0.8rem;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--glow-color);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .hamburger .line {
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-color);
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+
+        @media screen and (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .nav-active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(10, 10, 30, 0.9);
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-active li {
+                margin: 15px 0;
+            }
+        }
+
+        /* Estilos del slider */
+        #hero-slider {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Estilos de las secciones */
+        section {
+            padding: 6rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid var(--surface-color);
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Estilos de las tarjetas */
+        .productos-grid, .servicios-grid, .especialidades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .producto-card, .servicio-card, .especialidad-card {
+            background: var(--surface-color);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--surface-color);
+        }
+
+        .producto-card:hover, .servicio-card:hover, .especialidad-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--glow-color);
+        }
+
+        .producto-card img, .especialidad-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-color);
+            box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--secondary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+
+        .precio {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin: 1rem 0;
+        }
+
+        /* Estilos del formulario */
+        form {
+            max-width: 600px;
+            margin: 2rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--surface-color);
+            border-radius: 10px;
+            background: var(--surface-color);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        button[type="submit"] {
+            padding: 1rem;
+            background: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background: var(--secondary-color);
+            box-shadow: 0 0 20px var(--glow-color);
+        }
+
+        /* Estilos del pie de página */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--surface-color);
+        }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            text-align: center;
+            line-height: 50px;
+            cursor: pointer;
+            display: none;
+            z-index: 100;
+            transition: background-color 0.3s, opacity 0.3s, visibility 0.3s;
+        }
+
+        .scroll-top-btn:hover {
+            background-color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="C:Users/ic_ji/pag web compañia/images/logo.jpg" alt="Jires S.R.L Logo" id="logo-img">
+                <span class="company-name">Jires S.R.L</span>
+            </div>
+                                    <div class="hamburger">
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                        <div class="line"></div>
+                                    </div>                            <ul class="nav-links">
+                                <li><a href="#quienes-somos" class="nav-link">Quiénes Somos</a></li>
+                                <li><a href="#aires-acondicionados" class="nav-link">Venta de Aires</a></li>
+                                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                                <li><a href="#gerente" class="nav-link">Gerente General</a></li>
+                                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                            </ul>        </nav>
+    </header>
+
+    <main>
+        <section id="hero-slider">
+            <div class="slide active" style="background-image: url('C:Users/ic_ji/pag web compañia/images/slider/slide1.jpg');"></div>
+            <div class="slide" style="background-image: url('C:Users/ic_ji/pag web compañia/images/slider/slide2.jpg');"></div>
+            <div class="slide" style="background-image: url('C:Users/ic_ji/pag web compañia/images/slider/slide3.jpg');"></div>
+            <div class="slide" style="background-image: url('C:Users/ic_ji/pag web compañia/images/slider/slide4.jpg');"></div>
+        </section>
+
+        <section id="quienes-somos">
+            <h2>¿Quiénes Somos?</h2>
+            <p>Somos una compañía creada para llevar el confort a tu hogar. Nos hacemos responsables de cumplir tus necesidades en servicios generales, garantizando un trabajo de alta calidad y durabilidad. En Jires S.R.L, la satisfacción de nuestros clientes es el pilar de nuestro crecimiento.</p>
+        </section>
+
+        <section id="aires-acondicionados">
+            <h2>Venta de Aires Acondicionados</h2>
+            <div class="productos-grid">
+                <div class="producto-card">
+                    <img src="C:Users/ic_ji/pag web compañia/images/productos/producto1.jpg" alt="Aire Acondicionado Split">
+                    <h3>Inverter 12,000 BTU</h3>
+                    <p class="caracteristicas">Eficiencia energética A++, Gas R32, Bajo nivel de ruido, Control WiFi.</p>
+                    <p class="precio">RD$ 28,995.00</p>
+                </div>
+                <div class="producto-card">
+                    <img src="C:Users/ic_ji/pag web compañia/images/productos/producto2.jpg" alt="Aire Acondicionado Portátil">
+                    <h3>Portátil 10,000 BTU</h3>
+                    <p class="caracteristicas">Fácil de mover, Deshumidificador, Mando a distancia, Programador.</p>
+                    <p class="precio">RD$ 22,995.00</p>
+                </div>
+                <div class="producto-card">
+                    <img src="C:Users/ic_ji/pag web compañia/images/productos/producto3.jpg" alt="Aire Acondicionado de Ventana">
+                    <h3>De Ventana 8,000 BTU</h3>
+                    <p class="caracteristicas">Instalación sencilla, Alta durabilidad, Enfriamiento rápido, Filtro lavable.</p>
+                    <p class="precio">RD$ 18,995.00</p>
+                </div>
+                <div class="producto-card">
+                    <img src="C:Users/ic_ji/pag web compañia/images/productos/producto4.jpg" alt="Aire Acondicionado Central">
+                    <h3>Central 24,000 BTU</h3>
+                    <p class="caracteristicas">Climatización uniforme, Ideal para grandes espacios, Termostato inteligente.</p>
+                    <p class="precio">RD$ 69,995.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicios">
+            <h2>Nuestros Otros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio-card">
+                    <h3>Electricidad</h3>
+                    <p>Soluciones eléctricas seguras y eficientes para residencias y comercios.</p>
+                </div>
+                <div class="servicio-card">
+                    <h3>Plomería</h3>
+                    <p>Servicios de plomería general, desde reparaciones menores hasta instalaciones completas.</p>
+                </div>
+                <div class="servicio-card">
+                    <h3>Redes y Telecomunicaciones</h3>
+                    <p>Instalación y configuración de redes para un hogar u oficina conectado.</p>
+                </div>
+                <div class="servicio-card">
+                    <h3>Seguridad Electrónica</h3>
+                    <p>Instalación de cámaras de seguridad, alarmas y controles de acceso.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gerente">
+            <h2>Gerente General</h2>
+            <div class="gerente-container">
+                <img src="C:Users/ic_ji/Downloads/PROYECTO IC.png" alt="Foto de Isaac Jimenez" class="profile-pic">
+                <h3>Isaac Jimenez</h3>
+                <p>¡Hola! Soy Isaac Jimenez, gerente general de Jimenez Rodriguez Electro Servicios S.R.L. Con 20 años y una visión clara, lidero nuestro equipo para ofrecerte lo mejor.</p>
+                <p>Con la bendición de Dios, seguiremos creciendo para brindarles un servicio de excelencia.</p>
+                <h4>Mis Especialidades:</h4>
+                <div class="especialidades-grid">
+                    <div class="especialidad-card">
+                        <img src="C:Users/ic_ji/pag web compañia/images/especialidades/climatizacion.jpg" alt="Climatización">
+                        <div class="especialidad-title">Climatización</div>
+                    </div>
+                    <div class="especialidad-card">
+                        <img src="C:Users/ic_ji/pag web compañia/images/especialidades/electricidad.jpg" alt="Electricidad">
+                        <div class="especialidad-title">Electricidad</div>
+                    </div>
+                    <div class="especialidad-card">
+                        <img src="C:Users/ic_ji/pag web compañia/images/especialidades/redes.jpg" alt="Redes">
+                        <div class="especialidad-title">Redes</div>
+                    </div>
+                    <div class="especialidad-card">
+                        <img src="C:Users/ic_ji/pag web compañia/images/especialidades/domotica.jpg" alt="Domótica">
+                        <div class="especialidad-title">Domótica</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto y Registro</h2>
+            <p>¿Tienes alguna pregunta o deseas registrarte para recibir novedades? Completa el formulario.</p>
+            <form>
+                <input type="text" placeholder="Nombre Completo" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <textarea placeholder="Escribe tu mensaje o pregunta aquí..." rows="5"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jires S.R.L. Todos los derechos reservados.</p>
+    </footer>
+
+    <a href="#" id="scrollTopBtn" class="scroll-top-btn" aria-label="Volver Arriba">&uarr;</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth scrolling for navigation links
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = e.currentTarget.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Hero Slider
+            const slides = document.querySelectorAll('#hero-slider .slide');
+            let currentSlide = 0;
+            const slideInterval = 5000; // 5 seconds
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            setInterval(nextSlide, slideInterval);
+
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('nav-active');
+            });
+
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    scrollTopBtn.style.display = 'block';
+                } else {
+                    scrollTopBtn.style.display = 'none';
+                }
+            });
+
+            scrollTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
