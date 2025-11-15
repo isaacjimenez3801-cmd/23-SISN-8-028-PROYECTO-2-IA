@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Veterinaria "Patitas Felices"</title>
+    
+    <!-- CDN de Bootstrap 5.3.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- CDN de Font Awesome 6.0 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Menú de Navegación Fijo -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio"><i class="fas fa-paw"></i> Patitas Felices</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#clientes">Clientes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Sección Inicio -->
+        <section id="inicio" class="d-flex align-items-center text-center">
+            <div class="container">
+                <h1 class="display-3">Cuidamos a tu mejor amigo 🐾❤️</h1>
+                <p class="lead">La mejor atención para los miembros más peludos de tu familia. Calidad y cariño en cada consulta.</p>
+                <a href="#contacto" class="btn btn-lg btn-cta">¡Agenda una cita!</a>
+            </div>
+        </section>
+
+        <!-- Sección Servicios -->
+        <section id="servicios" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-5">Nuestros Servicios</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 service-card">
+                            <img src="https://purina.com.do/sites/default/files/2022-10/purina-consulta-veterinaria-para-mascotas-lo-que-debes-saber.jpg" class="card-img-top" alt="Consulta General">
+                            <div class="card-body text-center">
+                                <div class="service-icon"><i class="fas fa-stethoscope"></i></div>
+                                <h5 class="card-title">Consulta General</h5>
+                                <p class="card-text">Chequeos completos, vacunación y desparasitación para mantener a tu mascota sana y feliz.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 service-card">
+                            <img src="https://holavet.com.ar/wp-content/uploads/2022/04/close-up-on-veterinarian-taking-care-of-pet-1.webp" class="card-img-top" alt="Cirugías">
+                            <div class="card-body text-center">
+                                <div class="service-icon"><i class="fas fa-syringe"></i></div>
+                                <h5 class="card-title">Cirugías</h5>
+                                <p class="card-text">Contamos con quirófanos equipados para procedimientos seguros y una rápida recuperación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card h-100 service-card">
+                            <img src="https://neozoo.com.ar/wp-content/uploads/2023/06/Iconos-e-imagenes-09.png" class="card-img-top" alt="Peluquería">
+                            <div class="card-body text-center">
+                                <div class="service-icon"><i class="fas fa-cut"></i></div>
+                                <h5 class="card-title">Peluquería</h5>
+                                <p class="card-text">Baños, cortes de pelo y tratamientos estéticos para que tu mascota luzca increíble.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Equipo -->
+        <section id="equipo" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Nuestro Equipo</h2>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card team-card h-100 text-center p-4">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" class="team-img" alt="Dra. Ana López">
+                            <div class="card-body">
+                                <h5 class="card-title">Dra. Ana López</h5>
+                                <p class="text-muted">Especialista en Medicina Interna</p>
+                                <p class="card-text">Con más de 10 años de experiencia, la Dra. López es experta en diagnósticos complejos y cuidado de mascotas mayores.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card team-card h-100 text-center p-4">
+                            <img src="https://randomuser.me/api/portraits/men/75.jpg" class="team-img" alt="Dr. Carlos Méndez">
+                            <div class="card-body">
+                                <h5 class="card-title">Dr. Carlos Méndez</h5>
+                                <p class="text-muted">Cirujano Ortopédico</p>
+                                <p class="card-text">El Dr. Méndez lidera nuestro equipo quirúrgico, apasionado por devolver la movilidad y calidad de vida a sus pacientes.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="card team-card h-100 text-center p-4">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" class="team-img" alt="Dra. Laura Gómez">
+                            <div class="card-body">
+                                <h5 class="card-title">Dra. Laura Gómez</h5>
+                                <p class="text-muted">Especialista en Animales Exóticos</p>
+                                <p class="card-text">La Dra. Gómez tiene una dedicación especial por las aves, reptiles y pequeños mamíferos. Una experta única en su campo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Clientes -->
+        <section id="clientes" class="py-5">
+            <div class="container position-relative">
+                <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+                <div id="carouselClientes" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/men/1.jpg" class="testimonial-img" alt="Cliente 1">
+                                            <h5 class="mt-3">Juan Pérez</h5>
+                                            <p class="testimonial-text">"¡Excelente servicio! Mi perro Toby ama venir aquí. 🐶❤️"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/2.jpg" class="testimonial-img" alt="Cliente 2">
+                                            <h5 class="mt-3">Maria Rodriguez</h5>
+                                            <p class="testimonial-text">"El mejor trato y profesionalismo. Salvaron a mi gatita Luna. 🐱🙏"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/men/3.jpg" class="testimonial-img" alt="Cliente 3">
+                                            <h5 class="mt-3">Pedro Gomez</h5>
+                                            <p class="testimonial-text">"La peluquería es fantástica. Mi caniche parece una estrella de cine. ✨🐩"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/4.jpg" class="testimonial-img" alt="Cliente 4">
+                                            <h5 class="mt-3">Luisa Fernandez</h5>
+                                            <p class="testimonial-text">"Siempre atentos y cariñosos con mi conejo Bugs. 🐰🥕"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/men/5.jpg" class="testimonial-img" alt="Cliente 5">
+                                            <h5 class="mt-3">Carlos Santana</h5>
+                                            <p class="testimonial-text">"La cirugía de mi perra fue un éxito. ¡Gracias equipo! 💯"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/6.jpg" class="testimonial-img" alt="Cliente 6">
+                                            <h5 class="mt-3">Ana Jimenez</h5>
+                                            <p class="testimonial-text">"Confianza total en estos profesionales. Se nota que aman su trabajo. ❤️"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/men/7.jpg" class="testimonial-img" alt="Cliente 7">
+                                            <h5 class="mt-3">Jorge Nivar</h5>
+                                            <p class="testimonial-text">"Mi loro Polito está feliz con la Dra. Gómez. 🦜"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/8.jpg" class="testimonial-img" alt="Cliente 8">
+                                            <h5 class="mt-3">Sofia Castillo</h5>
+                                            <p class="testimonial-text">"Precios justos y una atención inmejorable. ¡Recomendados! 👍"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/men/9.jpg" class="testimonial-img" alt="Cliente 9">
+                                            <h5 class="mt-3">David Reyes</h5>
+                                            <p class="testimonial-text">"Siempre disponibles para emergencias. ¡Un alivio! 🚑"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <div class="card testimonial-card h-100">
+                                        <div class="card-body text-center">
+                                            <img src="https://randomuser.me/api/portraits/women/10.jpg" class="testimonial-img" alt="Cliente 10">
+                                            <h5 class="mt-3">Laura Peña</h5>
+                                            <p class="testimonial-text">"El mejor lugar para mi hamster Rocky. 🐹💕"</p>
+                                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselClientes" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselClientes" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center mb-5">Contáctanos</h2>
+                <div class="row">
+                    <div class="col-lg-5 mb-4">
+                        <div class="card contact-card h-100 p-4 text-center">
+                            <i class="fas fa-phone-volume contact-icon"></i>
+                            <h3>Llámanos</h3>
+                            <p class="lead">Estamos para ayudarte</p>
+                            <a href="tel:+18095551234" class="phone-number">(809) 555-1234</a>
+                            <hr>
+                            <a href="https://wa.me/18095551234" target="_blank" class="btn btn-whatsapp w-100">
+                                <i class="fab fa-whatsapp"></i> Enviar mensaje por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="card form-card p-4">
+                            <h3 class="text-center mb-4">Envíanos un mensaje</h3>
+                            <form id="contactForm" novalidate>
+                                <div class="mb-3">
+                                    <label for="nombre" class="form-label">Nombre Completo</label>
+                                    <input type="text" class="form-control" id="nombre" placeholder="Tu Nombre" required>
+                                    <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="email" placeholder="tu@correo.com" required>
+                                    <div class="invalid-feedback" id="emailError">Por favor, ingresa un correo válido.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea class="form-control" id="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                                    <div class="invalid-feedback">Por favor, escribe tu mensaje.</div>
+                                </div>
+                                <button type="submit" class="btn btn-primary w-100">Enviar Correo</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white text-center py-4">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white mx-2"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="mb-1"><strong>Dirección:</strong> Av. Winston Churchill 123, Santo Domingo, República Dominicana</p>
+            <p class="mb-0"><strong>Horarios:</strong> Lunes a Sábado de 9:00 AM a 7:00 PM</p>
+            <p>&copy; <span id="currentYear"></span> Clínica Veterinaria Patitas Felices. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Confirmación -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">¡Mensaje en camino! 🚀</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p>Gracias por contactarnos. Se abrirá tu aplicación de correo para que puedas enviar el mensaje.</p>
+                    <p>¡Revisaremos tu consulta y te responderemos pronto! 📬👩‍⚕️</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CDN de Bootstrap JS (Bundle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Personalizado -->
+    <script src="script.js"></script>
+</body>
+</html>
